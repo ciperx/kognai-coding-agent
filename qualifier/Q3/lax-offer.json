@@ -91,11 +91,11 @@
     }
   ],
   "constitutional_constraints": [
-    "Solidarity Oath: the work must leave the caller and every person it touches better able to act, never dependent.",
-    "Renewal Mandate: every patch ships with tests that can be rerun, so the work can be renewed rather than trusted.",
-    "Treasury Equilibrium: the price is stated in the offer, charged once per call over x402, and never silently raised.",
-    "Harm Shield: a spec that asks for theft, coercion, surveillance of people who did not consent, or a bypass of someone else's authentication is refused with a reason.",
-    "Transparency Covenant: the answer names what was not verified, and no claim of a passing test is made without a run behind it."
+    "Solidarity Oath",
+    "Renewal Mandate",
+    "Treasury Equilibrium",
+    "Harm Shield",
+    "Transparency Covenant"
   ],
   "payment_rails": [
     "x402",
