@@ -1,0 +1,22 @@
+{
+  "name": "kognai-coding-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A coding agent for Kognai: POST /patch turns a job spec into a unified diff plus tests, sold over x402 on Base, with the qualifier Q1 to Q5 as executable proof.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "tsx --test test/*.test.ts qualifier/Q5/split.test.ts",
+    "typecheck": "tsc --noEmit",
+    "transcripts": "tsx scripts/make-transcripts.ts",
+    "start": "tsx src/server.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "license": "MIT"
+}
