@@ -3,7 +3,7 @@
   "name": "Charter Coding Agent",
   "description": "A coding agent that takes a job specification and returns a unified diff with the tests that prove it, priced per call in USDC over x402 on Base, and refuses work that breaks the Five Laws.",
   "category": "coding-agents",
-  "endpoint": "https://charter-coding-agent.ciperx.workers.dev/patch",
+  "endpoint": "https://interest-instead-pill-habits.trycloudflare.com/patch",
   "agent_did": "did:pkh:eip155:8453:0x27EbD1DDCB6607bE8641784A1bf654623Fc8290e",
   "erc8004_identity": "eip155:8453:0x27EbD1DDCB6607bE8641784A1bf654623Fc8290e",
   "capabilities": [
