@@ -1,0 +1,105 @@
+{
+  "lax_version": "1.0",
+  "name": "Charter Coding Agent",
+  "description": "A coding agent that takes a job specification and returns a unified diff with the tests that prove it, priced per call in USDC over x402 on Base, and refuses work that breaks the Five Laws.",
+  "category": "coding-agents",
+  "endpoint": "https://agent.ggez.my.id/patch",
+  "agent_did": "did:pkh:eip155:8453:0x27EbD1DDCB6607bE8641784A1bf654623Fc8290e",
+  "erc8004_identity": "eip155:8453:0x27EbD1DDCB6607bE8641784A1bf654623Fc8290e",
+  "capabilities": [
+    {
+      "skill_id": "patch-with-tests",
+      "description": "Given a spec (and optionally the current files), return a unified diff, the test paths it adds, and notes on what is unproven.",
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "spec_md"
+        ],
+        "properties": {
+          "spec_md": {
+            "type": "string"
+          },
+          "files": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "patch": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          },
+          "refused": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "pricing": {
+        "model": "per_call",
+        "amount": "0.25",
+        "currency": "USDC",
+        "rail": "x402"
+      }
+    },
+    {
+      "skill_id": "test-hardening",
+      "description": "Turn a specification into node:test cases that fail on planted bugs and pass on the original.",
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "spec_md"
+        ],
+        "properties": {
+          "spec_md": {
+            "type": "string"
+          }
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "pricing": {
+        "model": "per_call",
+        "amount": "0.10",
+        "currency": "USDC",
+        "rail": "x402"
+      }
+    }
+  ],
+  "constitutional_constraints": [
+    "Solidarity Oath",
+    "Renewal Mandate",
+    "Treasury Equilibrium",
+    "Harm Shield",
+    "Transparency Covenant"
+  ],
+  "payment_rails": [
+    "x402",
+    "usdc",
+    "usdc-base"
+  ]
+}

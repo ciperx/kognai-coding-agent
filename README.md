@@ -43,3 +43,19 @@ payment is a 402 with the facilitator's reason in `error`; nothing downstream ru
 It does not pretend to solve the spec. It reads the requirements and the exported names, emits the typed
 interface and one shape test per requirement, and states in `notes` that the behaviour is unproven.
 A run that claims otherwise would be a lie in the same format as a green test run.
+
+## Live endpoint and LAX listing
+
+- Endpoint: `https://agent.ggez.my.id` on a domain I control, behind a named Cloudflare tunnel that survives restarts.
+- LAX listing id: `lax-ext-83ab5b24521b` (category `coding-agents`).
+- Price per call: `0.25` USDC for `patch-with-tests`, `0.10` USDC for `test-hardening`, paid over x402 on Base.
+- `lax-offer.json` at the repository root is the exact offer served by `GET /lax-offer`.
+- `examples/` holds real requests and the answers the agent gave, one file per capability.
+- Free checks a reviewer can run without paying: `GET /health` answers 200, `GET /lax-offer` answers 200,
+  `POST /patch` without an `X-PAYMENT` header answers 402 with the USDC terms and runs no work.
+
+## What the agent refuses
+
+It refuses any spec whose plan breaks the Five Laws: harm to people, deception, taking what is not
+offered, breaking a trust it was given, or hiding what it did. It also refuses to claim a test proves
+something it does not: unproven parts are named in `notes` instead of guessed.
